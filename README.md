@@ -6,9 +6,9 @@
 
 **Instituição:** &nbsp;&nbsp;IFRS – Campus Rio Grande  
 
-**Curso:** &nbsp;&nbsp;Análise e Desenvolvimento de Sistemas  
+**Curso:** &nbsp;&nbsp;Análise e Desenvolvimento de Sistemas (2º Semestre)
 
-**Experiências:** &nbsp;&nbsp;DevOps (Desenvolve - Grupo Boticário), &nbsp;&nbsp; BackEnd Java (ADA - Santander)  
+**Experiências:** &nbsp;&nbsp; Programa DevOps (Desenvolve - Grupo Boticário), &nbsp; Programa BackEnd Java (ADA - Santander)  
 
 **Hobbies:** &nbsp;&nbsp;Jogos, culinária, motos...  
 
