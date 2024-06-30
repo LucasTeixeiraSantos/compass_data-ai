@@ -1,0 +1,26 @@
+Script 1: processamento_de_vendas.sh
+Este script automatiza o processamento de dados de vendas, executando as seguintes etapas:
+
+    1 - Verificação de comandos: Confirma se os comandos necessários (cp, mv, awk, sort, uniq, wc, head, zip) estão instalados.
+    2 - Preparação de diretórios: Cria os diretórios necessários e copia o arquivo CSV de vendas para o diretório de vendas e backup, renomeando o arquivo de backup.
+    3 - Extração de informações: Utiliza awk para extrair as datas do primeiro e último registros de venda e conta o número de itens diferentes vendidos.
+    4 - Criação de relatório: Gera um relatório contendo a data do sistema, datas do primeiro e último registros de venda, quantidade de itens diferentes vendidos e as primeiras 10 linhas do CSV de backup.
+    5 - Compressão do backup: Comprime o arquivo de backup em um arquivo ZIP.
+    6 - Limpeza de arquivos: Remove os arquivos temporários utilizados no processamento.
+    7 - Execução principal: Chama as funções acima na ordem correta para realizar todo o processamento.
+
+
+Script 2: consolidador_de_processamento_de_vendas.sh
+Este script consolida os relatórios diários de vendas em um único relatório final:
+
+    1 - Verificação de comandos: Confirma se o comando cat está instalado.
+    2 - Unificação de relatórios: Cria um arquivo relatorio_final.txt no diretório de backup, unindo todos os relatórios diários (relatorio-*.txt).
+    3 - Execução principal: Chama as funções acima para realizar a consolidação e registrar a data e hora da conclusão.
+
+
+Dados: dados_de_vendas.CSV
+Arquivo CSV utilizado para o processamento de dados.
+
+
+Diretório: /vendas/backup
+Diretório onde constam os arquivos de backup e relatórios provenientes das execuçãos dos scripts.
