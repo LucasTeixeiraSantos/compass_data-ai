@@ -1,0 +1,15 @@
+Data do sistema operacional: 2024/06/27 15:27
+Data do primeiro registro de venda: 07/03/2023
+Data do último registro de venda: 31/01/2023
+Quantidade total de itens diferentes vendidos: 15
+Primeiras 10 linhas do arquivo /home/lucas-ubuntu/ecommerce/vendas/backup/backup-dados-20240627.csv:
+id,produto,quantidade,preço,data
+1,suporte para flauta,4,79.00,07/03/2023
+2,estojo para flauta,10,9999,08/03/2023
+3,saxofone,4,4359.00,10/03/2023
+4,suporte para saxofone,5,32.69,11/03/2023
+5,teclado musical casio,2,784.98,16/03/2023
+6,sintetizador de voz,3,324.12,17/03/2023
+7,controlador com cabo usb,4,124.00,18/03/2023
+8,caixa de som jbl,2,39.99,19/03/2023
+9,microfone sem fio shure,3,2000.00,20/03/2023

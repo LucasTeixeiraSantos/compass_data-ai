@@ -14,40 +14,15 @@
 
 <br clear="left"/>
 
-## Aprendendo
+## Sprints 
 
-<details>
-
-<summary> Sprint 1: Linux, Git/GitHub & Markdown </summary>
-
-### Linux
-- **Diretórios e Arquivos**
-- **Pacotes/Aplicativos**
-- **Busca por Arquivos/Diretórios e Dentro de Arquivos**
-- **Usuários e Grupos**
-- **Permissões**
-- **Gerenciamento de Redes**
-- **Compactação de Arquivos e Diretórios**
-
-### Git & GitHub
-- **Repositórios**
-- **Branches**
-- **Stash**
-- **Submodules**
-- **Logs**
-- **Commits**
-- **Licenças**
-- **Issues**
-- **CI/CD no Github**
-- **Gists**
-
-
-### Markdown
-- **Títulos**
-- **Ênfase nos textos**
-- **Listas**
-- **Imagens**
-- **Links**
-- **Códigos no GitHub**
-
-</details>
+1. [Sprint 1](Sprint%201/README.md)
+2. [Sprint 2]
+3. [Sprint 3]
+4. [Sprint 4]
+5. [Sprint 5]
+6. [Sprint 6]
+7. [Sprint 7]
+8. [Sprint 8]
+9. [Sprint 9]
+10. [Sprint 10]

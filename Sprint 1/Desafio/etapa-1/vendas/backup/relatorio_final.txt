@@ -1,0 +1,68 @@
+Data do sistema operacional: 2024/06/24 15:27
+Data do primeiro registro de venda: 01/01/2023
+Data do último registro de venda: 22/01/2023
+Quantidade total de itens diferentes vendidos: 22
+Primeiras 10 linhas do arquivo /home/lucas-ubuntu/ecommerce/vendas/backup/backup-dados-20240624.csv:
+id,produto,quantidade,preço,data
+1,camiseta,2,29.90,01/01/2023
+2,calça,5,80.00,02/01/2023
+3,sapato,3,100.00,03/01/2023
+4,meia,20,5.00,04/01/2023
+5,cinto,8,15.00,05/01/2023
+6,camisa,7,40.00,06/01/2023
+7,bermuda,6,50.00,07/01/2023
+8,tênis,4,120.00,08/01/2023
+9,bone,12,10.00,09/01/2023
+
+
+Data do sistema operacional: 2024/06/25 15:27
+Data do primeiro registro de venda: 23/01/2023
+Data do último registro de venda: 20/02/2023
+Quantidade total de itens diferentes vendidos: 15
+Primeiras 10 linhas do arquivo /home/lucas-ubuntu/ecommerce/vendas/backup/backup-dados-20240625.csv:
+id,produto,quantidade,preço,data
+1,filtro de linha,6,30.00,23/01/2023
+2,cabo HDMI,10,15.00,24/01/2023
+3,pilha AA,20,2.00,25/01/2023
+4,luminária de mesa,4,40.00,26/01/2023
+5,relogio de parede,8,20.00,27/01/2023
+6,porta-retrato digital,2,100.00,28/01/2023
+7,vaporizador de roupas,1,150.00,29/01/2023
+8,balança digital,3,60.00,30/01/2023
+9,furadeira elétrica,2,200.00,31/01/2023
+
+
+Data do sistema operacional: 2024/06/26 15:27
+Data do primeiro registro de venda: 21/02/2023
+Data do último registro de venda: 06/03/2023
+Quantidade total de itens diferentes vendidos: 14
+Primeiras 10 linhas do arquivo /home/lucas-ubuntu/ecommerce/vendas/backup/backup-dados-20240626.csv:
+id,produto,quantidade,preço,data
+1,amplificador de guitarra,4,799.00,21/02/2023
+2,pedaleira preta,5,499.00,22/02/2023
+3,cabo para instrumento ninja,10,59.00,23/02/2023
+4,palheta dunlop,20,1.00,24/02/2023
+5,afinador digital,6,49.00,25/02/2023
+6,capotraste,8,99.00,26/02/2023
+7,suporte para guitarra,7,29.00,27/02/2023
+8,correia para guitarra,9,19.00,28/02/2023
+9,encordoamento para guitarra,12,39.00,01/03/2023
+
+
+Data do sistema operacional: 2024/06/27 15:27
+Data do primeiro registro de venda: 07/03/2023
+Data do último registro de venda: 31/01/2023
+Quantidade total de itens diferentes vendidos: 15
+Primeiras 10 linhas do arquivo /home/lucas-ubuntu/ecommerce/vendas/backup/backup-dados-20240627.csv:
+id,produto,quantidade,preço,data
+1,suporte para flauta,4,79.00,07/03/2023
+2,estojo para flauta,10,9999,08/03/2023
+3,saxofone,4,4359.00,10/03/2023
+4,suporte para saxofone,5,32.69,11/03/2023
+5,teclado musical casio,2,784.98,16/03/2023
+6,sintetizador de voz,3,324.12,17/03/2023
+7,controlador com cabo usb,4,124.00,18/03/2023
+8,caixa de som jbl,2,39.99,19/03/2023
+9,microfone sem fio shure,3,2000.00,20/03/2023
+
+

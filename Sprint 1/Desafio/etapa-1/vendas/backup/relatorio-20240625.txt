@@ -1,0 +1,15 @@
+Data do sistema operacional: 2024/06/25 15:27
+Data do primeiro registro de venda: 23/01/2023
+Data do último registro de venda: 20/02/2023
+Quantidade total de itens diferentes vendidos: 15
+Primeiras 10 linhas do arquivo /home/lucas-ubuntu/ecommerce/vendas/backup/backup-dados-20240625.csv:
+id,produto,quantidade,preço,data
+1,filtro de linha,6,30.00,23/01/2023
+2,cabo HDMI,10,15.00,24/01/2023
+3,pilha AA,20,2.00,25/01/2023
+4,luminária de mesa,4,40.00,26/01/2023
+5,relogio de parede,8,20.00,27/01/2023
+6,porta-retrato digital,2,100.00,28/01/2023
+7,vaporizador de roupas,1,150.00,29/01/2023
+8,balança digital,3,60.00,30/01/2023
+9,furadeira elétrica,2,200.00,31/01/2023
