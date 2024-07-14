@@ -1,4 +1,9 @@
-### Linux
+### Evidências / Etapas para execução do desafio:
+[README.md](evidencias/README.md)
+
+### Conteúdos da Sprint:
+
+## Linux
 - **Diretórios e Arquivos**
 - **Pacotes/Aplicativos**
 - **Busca por Arquivos/Diretórios e Dentro de Arquivos**
@@ -7,7 +12,7 @@
 - **Gerenciamento de Redes**
 - **Compactação de Arquivos e Diretórios**
 
-### Git & GitHub
+## Git & GitHub
 - **Repositórios**
 - **Branches**
 - **Stash**
