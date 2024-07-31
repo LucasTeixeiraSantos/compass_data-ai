@@ -1,3 +1,6 @@
+## Antes da Normalização
+<img src="https://github.com/LucasTeixeiraSantos/compass_data-ai/blob/main/Sprint%202/desafio/tb_locacao.png" alt="tb_locacao.png" />
+
 ## Normalização da Base de Dados do Sistema de Gerenciamento de Pedidos
 
 Este documento descreve os passos seguidos para a normalização da base de dados de um sistema de alugueis de carros. A normalização foi realizada para minimizar redundâncias e manter a integridade dos dados.
@@ -23,7 +26,12 @@ Este documento descreve os passos seguidos para a normalização da base de dado
    - As relações entre tabelas foram definidas usando chaves estrangeiras (`FK`).
    - As chaves estrangeiras definidas são:
      - `locacoes`: `idCliente` (referencia `clientes`), `idCarro` (referencia `carros`),`idVendedor` (referencia `vendedores`)
-     - `carros`: `idcombustivel` (referencia `combustiveis`)
+     - `carros`: `idcombustivel` (referencia `combustiveis`).
 
-5. **Desnormalização Controlada**
-   - Foi criada a tabela `locacoes` para armazenar a relação entre `vendedores`, `clientes` e `carros`.
+## Locacoes após a Normalização
+
+<img src="https://github.com/LucasTeixeiraSantos/compass_data-ai/blob/main/Sprint%202/desafio/locacoes_fato.png" alt="locacoes_fato.png" />
+
+## Modelo Dimensional
+
+<img src="https://github.com/LucasTeixeiraSantos/compass_data-ai/blob/main/Sprint%202/desafio/modelo-dimensional.png" alt="modelo-dimensional.png" />
