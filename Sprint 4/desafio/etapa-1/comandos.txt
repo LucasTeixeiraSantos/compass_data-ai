@@ -1,0 +1,2 @@
+docker build -t carguru .
+docker run carguru
