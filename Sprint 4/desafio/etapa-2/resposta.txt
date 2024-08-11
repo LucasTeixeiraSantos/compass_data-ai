@@ -1,0 +1,4 @@
+P: É possível reutilizar containers?
+
+R: Sim, se um container parou, ele pode ser reiniciado usando o comando:
+docker start <nome/id_do_container>
