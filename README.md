@@ -6,7 +6,7 @@
 
 **Instituição:** &nbsp;&nbsp;IFRS – Campus Rio Grande  
 
-**Curso:** &nbsp;&nbsp;Análise e Desenvolvimento de Sistemas (2º Semestre)
+**Curso:** &nbsp;&nbsp;Análise e Desenvolvimento de Sistemas (3º Semestre)
 
 **Experiências:** &nbsp;&nbsp; Programa DevOps (Desenvolve - Grupo Boticário), &nbsp; Programa BackEnd Java (ADA - Santander)  
 
@@ -18,9 +18,9 @@
 
 1. [Sprint 1](Sprint%201/README.md)
 2. [Sprint 2](Sprint%202/README.md)
-3. [Sprint 3]
-4. [Sprint 4]
-5. [Sprint 5]
+3. [Sprint 3](Sprint%203/README.md)
+4. [Sprint 4](Sprint%204/README.md)
+5. [Sprint 5](Sprint%205/README.md)
 6. [Sprint 6]
 7. [Sprint 7]
 8. [Sprint 8]
