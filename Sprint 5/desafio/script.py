@@ -16,7 +16,7 @@ response = s3_client.select_object_content(
     ExpressionType='SQL',
     Expression=query,
     InputSerialization={'CSV': {'FileHeaderInfo': 'USE', 'FieldDelimiter': ';'}},
-    OutputSerialization={'CSV': {}},
+    OutputSerialization={'CSV': {'FieldDelimiter': ';'}},
 )
 
 for event in response['Payload']:
