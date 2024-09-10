@@ -21,8 +21,8 @@
 3. [Sprint 3](Sprint%203/README.md)
 4. [Sprint 4](Sprint%204/README.md)
 5. [Sprint 5](Sprint%205/README.md)
-6. [Sprint 6]
-7. [Sprint 7]
-8. [Sprint 8]
-9. [Sprint 9]
-10. [Sprint 10]
+6. [Sprint 6](Sprint%206/README.md)
+7. [Sprint 7](Sprint%207/README.md)
+8. [Sprint 8](Sprint%208/README.md)
+9. [Sprint 9](Sprint%209/README.md)
+10. [Sprint 10](Sprint%210/README.md)
