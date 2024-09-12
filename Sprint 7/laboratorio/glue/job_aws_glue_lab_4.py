@@ -1,10 +1,10 @@
 import sys
-from awsglue.transforms import *
-from awsglue.utils import getResolvedOptions
-from pyspark.context import SparkContext
-from awsglue.context import GlueContext
-from awsglue.job import Job
-from pyspark.sql.functions import col, upper, sum
+from awsglue.transforms import * # type: ignore
+from awsglue.utils import getResolvedOptions # type: ignore
+from pyspark.context import SparkContext # type: ignore
+from awsglue.context import GlueContext # type: ignore
+from awsglue.job import Job # type: ignore
+from pyspark.sql.functions import col, upper, sum # type: ignore
 
 ## @params: [JOB_NAME, S3_INPUT_PATH, S3_OUTPUT_PATH]
 args = getResolvedOptions(sys.argv, ['JOB_NAME', 'S3_INPUT_PATH', 'S3_OUTPUT_PATH'])
