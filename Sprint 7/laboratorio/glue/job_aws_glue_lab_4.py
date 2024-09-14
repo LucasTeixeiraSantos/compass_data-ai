@@ -71,4 +71,5 @@ df_upper.write.mode("overwrite")\
     .json(output_path)
 
 job.commit()
+sc.stop()
 print("Job ended successfully!")
