@@ -163,5 +163,4 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
 
 ![09-bucket_s3_lambda_files](https://github.com/user-attachments/assets/3e6bb6e6-b9eb-4a69-95ae-3ba73fb67a1c)
 
-     ![08-bucket_s3_lambda_files](https://github.com/user-attachments/assets/7b12fc1b-cfe2-4966-9105-eb2c1fc3351e)
 
