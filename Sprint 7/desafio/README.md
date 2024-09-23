@@ -31,13 +31,12 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
 - 3) Se está utilizando TMDB, buscar pela API os dados que complemente a análise. Se achar importante, agrupar os retornos da API em arquivo JSON com, no máximo, 100 registros cada.
 - 4) Utilize a lib boto3 para gravar os dados no AWS S3. <br>
   Considere o padrão: <br>
-  <b> <nome_do_bucket>\\<camada_de_armazenamento>\\<origem_do_dado>\\<formato_do_dado>\\<especificação_do_dado>\\<data_de_processamento_separada_por_ano\mes\dia>\\\<arquivo> </b>
-
+  ```
+  S3:\\<nome_do_bucket>\<camada_de_armazenamento>\<origem_do_dado>\<formato_do_dado>\<especificação_do_dado>\<data_de_processamento_separada_por_ano\mes\dia>\<arquivo>
+  ```
 # Passos para a execução do Desafio (Windows)
 
-## 1. Criar uma camada (layer) no AWS Lambda para as libs necessárias à ingestão de dados (boto3 e aiohttp).
-
-### Passo 1: Instalar o Python 3.9
+## Passo 1: Instalar o Python 3.9
 
 1. **Baixar o Instalador do Python 3.9:**
    - Acesse o site oficial do Python: [python.org](https://www.python.org/downloads/release/python-390/)
@@ -56,7 +55,7 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
      ```
    - Você deve ver uma saída semelhante a `Python 3.9.x`.
 
-### Passo 2: Criar uma Layer para AWS Lambda
+## Passo 2: Criar a estrutura da Layer para AWS Lambda
 
 1. **Criar a Estrutura de Diretórios:**
    - Crie uma pasta para sua Layer. Por exemplo, `C:\aws_lambda_layer`.
@@ -85,25 +84,72 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
      powershell Compress-Archive -Path python -DestinationPath lambda_layer.zip
      ```
 
-4. **Criar a Layer no AWS Lambda:**
+## Passo 3: Criar a Layer na AWS Lambda
+
+1. **Criar a Layer no AWS Lambda:**
    - Acesse o Console de Gerenciamento da AWS e vá para o serviço **Lambda**.
    - No painel esquerdo, clique em **Layers**.
    - Clique no botão **Create layer**.
    - Dê um nome à sua Layer, adicione uma descrição e faça o upload do arquivo `lambda_layer.zip` que você criou.
    - Selecione a versão do Python (3.9) e clique em **Create**.
 
-4. ** Criar a função na AWS Lambda:**
+## Passo 4: Criar a Função Lambda
+
    - Acesse o Console de Gerenciamento da AWS e vá para o serviço **Lambda**.
    - No painel esquerdo, clique em **Functions**.
    - Clique em **Create function**.
    - Em **Function name**, escolha um nome para a sua função.
    - Em **Runetime**, selecione **Python 3.9**
    - Abaixo, clique em **Create function**.
-   - 
-6. **Adicionar a Layer à sua Função Lambda:**
-   - Acesse sua função Lambda existente ou crie uma nova.
+
+## Passo 5: Adicionar a layer à função Lambda
+
+   - Vá para a sua função Lambda criada no passo 4.
+   - Clique no nome da função criada no passo 4.
    - No painel da função, role para baixo até a seção **Layers**.
-   - Clique em **Add a layer** e selecione a Layer que você criou.
+   - Clique em **Add a layer**, clique em **Custom Layers** e em **Choose**, selecione a Layer que você criou.
    - Clique em **Add**.
 
+## Passo 6: Copie o código Python para a Lambda
+   - Vá para a sua função Lambda.
+   - No painel da função, role para abaixo até a seção **Code**.
+   - Clique na aba **lambda_function**
+   - Copie o conteúdo do arquivo **lambda.py** que se encontra na pasta deste **README.md**.
+   - Apague o conteúdo da aba **lambda_function** e cole o conteúdo do arquivo **lambda.py**.
+   - Clique no botão **Deploy**.
 
+## Passo 7: Crie um evento de Teste para a Lambda
+   - Vá para a sua função Lambda.
+   - No painel da função, role para baixo até a seção **Code**. 
+   - Clique no botão **Test** em azul.
+   - Clique no botão **Save** em laranja.
+
+## Passo 8: Configure as variáveis de ambiente
+   - Vá para a sua função Lambda.
+   - No painel da função, role para baixo e clique na seção **Configuration**
+   - No painel esquerdo, clique em *Environment Variables** 
+   - Clique em **Edit**
+   - Clique em **Add environment variables**.
+   - Adicione as seguintes variáveis de ambiente e seu respectivo **Value**:
+     - TMDB_API_KEY (Sua chave de API do TMDB)
+     - S3_BUCKET (O nome do seu Bucket no S3.
+     - TMDB_TYPE (Filmes ou séries, digite **movies**)
+     - GENRE_ID (O id do gênero, digite **16** para consultar os filmes de animação.
+  - Clique em **Save**.
+    
+## Passo 9: Alterar o timeout e a Memória da Lambda
+   - Vá para a sua função Lambda.
+   - No painel da função, role para baixo e clique na seção **Configurations**
+   - No painel esquerdo, clique em **General configuration**.
+   - Clique em **edit**.
+   - Em **Memory**, altere para **256**MB.
+   - Em **Timeout**, altere para **2**min e **0** sec.
+   - Clique em **Save**.
+
+## Passo 10: Execute a função Lambda
+   - Vá para a sua função Lambda.
+   - No painel da função, role para baixo até a seção **Code**.
+   - Clique em **Test**.
+   - Aguarde o resultado da Lambda.
+
+## 
