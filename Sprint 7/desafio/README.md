@@ -1,27 +1,7 @@
-# Desafio da Sprint 7
-
-# Pergunta
-
-# 1. Objetivo
-O objetivo é praticar a combinação de conhecimentos vistos no programa, fazer um mix de tudo que já foi dito.
-
-# 2. Entregáveis
-
-- Todo o código, comentários, evidências e demais artefatos desenvolvidos para resolver o desafio devem estar comitados no Git de forma organizada.
-- Arquivo Markdown com evidências imagens/prints de realização do desafio, bem como documentação de explicação de cada parte executada
-  - Explicação dos motivadores de cada API.
-  - Explicitar suas questões que serão respondidas na última etapa do desafio.
-- Código desenvolvido com devidos comentários.
-  - Arquivo contendo código Python no formato .PY representando a Lambda.
-
-# 3. Preparação
-
-- Antes de começar certifique-se que possui o entendimento completo do Desafio de Filmes e Series.
-
-# 4. Desafio
+# Desafio
 O Desafio de Filmes e séries está dividido em 5 entregas. Nesta etapa será realizada a entrega 2. Os detalhes do Desafio completo estão na Sprint 6.
 
-## 4.1. Entrega 2 
+## Entrega 2 
 <b> Ingestão de API: </b> Nesta etapa do desafio iremos capturar dados do TMDB via AWS Lambda realizando chamadas de API. Os dados coletados devem ser persistidos em Amazon S3, camada RAW Zone, mantendo o formato da origem (JSON) e, se possíve, agrupando-os em arquivos com, no máximo, 100 registros cada arquivo. O objetivo desta etapa é complementar os dados dos Filmes e Series, carregados na Etapa 1, com dados oriundos TMDB e, opcionalmente, de outra API de sua escolha.
 Abaixo uma imagem demonstrando qual é o escopo da parte 2 do Desafio.
 
@@ -56,6 +36,9 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
    - Você deve ver uma saída semelhante a `Python 3.9.x`.
 
 ## Passo 2: Criar a estrutura da Layer para AWS Lambda
+### PS: Se preferir, você pode baixar o zip da layer e pular para o passo 3:
+[lambda_layer.zip](https://github.com/user-attachments/files/17101895/lambda_layer.zip)
+
 
 1. **Criar a Estrutura de Diretórios:**
    - Crie uma pasta para sua Layer. Por exemplo, `C:\aws_lambda_layer`.
@@ -84,6 +67,9 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
      powershell Compress-Archive -Path python -DestinationPath lambda_layer.zip
      ```
 
+     ![01-layer_zip](https://github.com/user-attachments/assets/75af649f-2487-4cdc-ab1e-f1ddb47c8559)
+
+
 ## Passo 3: Criar a Layer na AWS Lambda
 
 1. **Criar a Layer no AWS Lambda:**
@@ -93,6 +79,10 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
    - Dê um nome à sua Layer, adicione uma descrição e faça o upload do arquivo `lambda_layer.zip` que você criou.
    - Selecione a versão do Python (3.9) e clique em **Create**.
 
+
+![02-lambda_layer](https://github.com/user-attachments/assets/901e3c2a-e265-4f34-a03b-a1f54675f528)
+
+
 ## Passo 4: Criar a Função Lambda
 
    - Acesse o Console de Gerenciamento da AWS e vá para o serviço **Lambda**.
@@ -101,6 +91,8 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
    - Em **Function name**, escolha um nome para a sua função.
    - Em **Runetime**, selecione **Python 3.9**
    - Abaixo, clique em **Create function**.
+   - 
+![03-lambda_function](https://github.com/user-attachments/assets/2e884653-abd0-460f-a11a-d7183567d60d)
 
 ## Passo 5: Adicionar a layer à função Lambda
 
@@ -109,6 +101,8 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
    - No painel da função, role para baixo até a seção **Layers**.
    - Clique em **Add a layer**, clique em **Custom Layers** e em **Choose**, selecione a Layer que você criou.
    - Clique em **Add**.
+     
+![04-function_with_layer](https://github.com/user-attachments/assets/a45cb386-d181-4654-8b12-fe561ac2cb24)
 
 ## Passo 6: Copie o código Python para a Lambda
    - Vá para a sua função Lambda.
@@ -118,11 +112,13 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
    - Apague o conteúdo da aba **lambda_function** e cole o conteúdo do arquivo **lambda.py**.
    - Clique no botão **Deploy**.
 
+![05-function_with_code](https://github.com/user-attachments/assets/20c191b2-6971-4059-b0f6-89ff43da85b7)
+
 ## Passo 7: Crie um evento de Teste para a Lambda
    - Vá para a sua função Lambda.
    - No painel da função, role para baixo até a seção **Code**. 
-   - Clique no botão **Test** em azul.
-   - Clique no botão **Save** em laranja.
+   - Clique no botão **Test**.
+   - Clique no botão **Save**.
 
 ## Passo 8: Configure as variáveis de ambiente
    - Vá para a sua função Lambda.
@@ -136,6 +132,9 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
      - TMDB_TYPE (Filmes ou séries, digite **movies**)
      - GENRE_ID (O id do gênero, digite **16** para consultar os filmes de animação.
   - Clique em **Save**.
+
+![06-function_environment_variables](https://github.com/user-attachments/assets/756ff5b0-3fdf-4e1a-8f77-d25f41d80d12)
+
     
 ## Passo 9: Alterar o timeout e a Memória da Lambda
    - Vá para a sua função Lambda.
@@ -145,6 +144,8 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
    - Em **Memory**, altere para **256**MB.
    - Em **Timeout**, altere para **2**min e **0** sec.
    - Clique em **Save**.
+     
+![07-function_memory_ _timeout](https://github.com/user-attachments/assets/602a0575-d0cf-4ba0-ac27-50474f88ba87)
 
 ## Passo 10: Execute a função Lambda
    - Vá para a sua função Lambda.
@@ -152,4 +153,14 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
    - Clique em **Test**.
    - Aguarde o resultado da Lambda.
 
-## 
+![08-lambda_results](https://github.com/user-attachments/assets/e6615a69-dc0c-49d1-8123-6f97b5fa78b0)
+
+## Passo 11: Verifique o resultado
+   - Acesse o Console de Gerenciamento da AWS e vá para o serviço **S3**.
+   - No painel esquerdo, clique em **Buckets**.
+   - Clique no nome do seu bucket.
+   - Siga até o caminho definido na função.
+
+![09-bucket_s3_lambda_files](https://github.com/user-attachments/assets/3e6bb6e6-b9eb-4a69-95ae-3ba73fb67a1c)
+
+
