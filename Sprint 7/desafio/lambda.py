@@ -17,7 +17,7 @@ params = {
     "language": "en-US",
     "sort_by": "popularity.desc",
     "with_genres": GENRE_ID,
-    "vote_count.gte": "100"
+    "vote_count.gte": "5"
 }
 
 headers = {
@@ -85,15 +85,14 @@ async def fetch_and_save_movies():
             movie_data.extend(movies)
 
             while len(movie_data) >= 100:
-                file_name = f"movies_part_{file_count}.json"
-                
+                file_name = f"movies_part_{str(file_count).zfill(3)}.json"
                 save_to_s3(movie_data[:100], file_name)
                 
                 movie_data = movie_data[100:]
                 file_count += 1
 
         if movie_data:
-            file_name = f"movies_part_{file_count}.json"
+            file_name = f"movies_part_{str(file_count).zfill(3)}.json" 
             save_to_s3(movie_data, file_name)
 
 async def async_handler(event, context):
