@@ -129,7 +129,7 @@ Em sua conta AWS, no serviço AWS Lambda, realize as seguintes atividades:
    - Adicione as seguintes variáveis de ambiente e seu respectivo **Value**:
      - TMDB_API_KEY (Sua chave de API do TMDB)
      - S3_BUCKET (O nome do seu Bucket no S3.
-     - TMDB_TYPE (Filmes ou séries, digite **movies**)
+     - TMDB_TYPE (Filmes ou séries, digite **movie**)
      - GENRE_ID (O id do gênero, digite **16** para consultar os filmes de animação.
   - Clique em **Save**.
 
