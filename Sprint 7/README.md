@@ -4,7 +4,7 @@
   - [README](Sprint%207/exercicios/laboratorio/glue/README.md)
   - [Arquivo .py](Sprint%207/exercicios/laboratorio/glue/job_aws_glue_lab_4.py)
 
-## 1. [Exercício PysPark](Sprint%207/exercicios/spark-contador_palavras)
+## 2. [Exercício PysPark](Sprint%207/exercicios/spark-contador_palavras)
   - [README](Sprint%207/exercicios/spark-contador_palavras/README.md)
   - [Dockerfile](Sprint%207/exercicios/spark-contador_palavras/Dockerfile)
 
