@@ -1,7 +1,6 @@
 # [Exercícios](exercicios)
 
 ## 1. [Laboratório Glue](exercicios/laboratorio/glue)
-Sprint 7/exercicios
   - [README](exercicios/laboratorio/glue/README.md)
   - [Arquivo .py](exercicios/laboratorio/glue/job_aws_glue_lab_4.py)
 
