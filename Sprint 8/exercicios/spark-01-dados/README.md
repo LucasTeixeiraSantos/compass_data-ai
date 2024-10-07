@@ -1,3 +1,5 @@
+# OBS: O exercício foi realizado utilizando o Google Colab
+
 # Etapa 1
 
 ```py
