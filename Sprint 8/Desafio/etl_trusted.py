@@ -7,7 +7,7 @@ from pyspark.context import SparkContext
 from awsglue.context import GlueContext
 from awsglue.job import Job
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import trim, col, when
+from pyspark.sql.functions import trim, col, when, to_date, lower
 from pyspark.sql.types import StringType
 
 glueContext = GlueContext(SparkContext.getOrCreate())
@@ -15,7 +15,7 @@ spark = glueContext.spark_session
 job = Job(glueContext)
 
 JSON_PATH = "s3://data-lake-lucas-ts/Raw/TMDB/JSON/"
-CSV_PATH = "s3://data-lake-lucas-ts/Raw/Local/CSV/Movies"
+CSV_PATH = "s3://data-lake-lucas-ts/Raw/Local/CSV/Movies/"
 OUTPUT_PATH = "s3://data-lake-lucas-ts/Trusted/PARQUET/{year}/{month}/{day}/"
 
 def list_s3_files(bucket_prefix):
@@ -71,32 +71,31 @@ movies_csv_df = movies_csv_df.withColumnRenamed("id", "imdb_id")
 result_df = movies_details_df.join(movies_csv_df, on='imdb_id', how='left')
 
 result_df = result_df.select(
-    col('anoFalecimento').alias('artist_death_year'),
-    col('anoNascimento').alias('artist_birth_year'),
-    col('backdrop_path').alias('path_backdrop'),
-    col('generoArtista').alias('artist_gender'),
-    col('id').alias('id_tmdb'),
-    col('imdb_id').alias('id_imdb'),
-    col('nomeArtista').alias('artist_name'),
-    col('notaMedia').alias('vote_average_imdb'),
-    col('numeroVotos').alias('vote_count_imdb'),
-    col('original_title').alias('title_original'),
-    col('overview'),
-    col('personagem').alias('artist_character'),
-    col('poster_path').alias('path_poster'),
-    col('profissao').alias('artist_profession'),
-    col('release_date'),
-    col('revenue'),
-    col('runtime'),
-    col('tagline'),
-    col('title'),
-    col('vote_average').alias('vote_average_tmdb'),
-    col('vote_count').alias('vote_count_tmdb'),
-    col('budget')
+    trim(col('anoFalecimento')).cast('int').alias('artist_death_year'),
+    trim(col('anoNascimento')).cast('int').alias('artist_birth_year'),
+    trim(col('backdrop_path')).alias('path_backdrop'),
+    lower(trim(col('generoArtista'))).alias('artist_gender'),
+    trim(col('id')).alias('id_tmdb'),
+    trim(col('imdb_id')).alias('id_imdb'),
+    trim(col('nomeArtista')).alias('artist_name'),
+    trim(col('notaMedia')).cast('double').alias('vote_average_imdb'),
+    trim(col('numeroVotos')).cast('int').alias('vote_count_imdb'),
+    trim(col('original_title')).alias('title_original'),
+    trim(col('overview')).alias('overview'),
+    trim(col('personagem')).alias('artist_character'),
+    trim(col('poster_path')).alias('path_poster'),
+    trim(col('profissao')).alias('artist_profession'),
+    to_date(trim(col('release_date')), 'yyyy-MM-dd').alias('release_date'),
+    trim(col('revenue')).cast('bigint').alias('revenue'),
+    trim(col('runtime')).cast('int').alias('runtime'),
+    trim(col('tagline')).alias('tagline'),
+    trim(col('title')).alias('title'),
+    trim(col('vote_average')).cast('double').alias('vote_average_tmdb'),
+    trim(col('vote_count')).cast('int').alias('vote_count_tmdb'),
+    trim(col('budget')).cast('bigint').alias('budget')
 )
 
 result_df = replace_nulls(result_df)
-
 result_df = result_df.orderBy(col('vote_count_tmdb').desc())
 
 current_date = datetime.now()
