@@ -275,7 +275,7 @@ Por fim, o job do Glue é finalizado com o comando `job.commit()`.
   
   ### 3.1 No Query Editor do Amazon Athena, rode a seguinte query para criar a tabela:
 ```SQL
-CREATE EXTERNAL TABLE IF NOT EXISTS default.table_test (
+CREATE EXTERNAL TABLE IF NOT EXISTS default.studio_ghibli (
     artist_death_year INT,
     artist_birth_year INT,
     path_backdrop STRING,
@@ -308,12 +308,12 @@ TBLPROPERTIES ("parquet.compression"="SNAPPY");
 
   ### 3.2 Utilize a seguinte query para que o Athena reconheça as partições:
 ```SQL
-MSCK REPAIR TABLE default.table_test;
+MSCK REPAIR TABLE default.studio_ghibli;
 ```
 ![image](https://github.com/user-attachments/assets/22ec51be-5ec7-42c0-9ff4-5b52457af001)
 
 ## 3.3 Utilize a seguinte query para visualizar os dados da tabela:
 ```SQL
-SELECT * FROM "default"."table_test" limit 10;
+SELECT * FROM "default"."studio_ghibli" limit 10;
 ```
 ![image](https://github.com/user-attachments/assets/38bc4a1d-0c52-40d5-bab1-ad9a9bebd375)
