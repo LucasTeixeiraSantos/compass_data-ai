@@ -18,10 +18,10 @@ RAW_JSON_PATH = "s3://data-lake-lucas-ts/Raw/TMDB/JSON/"
 RAW_CSV_PATH = "s3://data-lake-lucas-ts/Raw/Local/CSV/Movies/"
 TRUSTED_OUTPUT_PATH = "s3://data-lake-lucas-ts/Trusted/PARQUET/"
 
-def list_s3_files(bucket_prefix):
+def list_s3_files(path):
     s3_client = boto3.client('s3')
-    bucket = bucket_prefix.split('/')[2]
-    prefix = '/'.join(bucket_prefix.split('/')[3:])
+    bucket = path.split('/')[2]
+    prefix = '/'.join(path.split('/')[3:])
     
     result = s3_client.list_objects_v2(Bucket=bucket, Prefix=prefix)
     return [
@@ -37,7 +37,7 @@ def read_and_union_files(file_paths, file_type):
         union_df = df if union_df is None else union_df.union(df)
     return union_df
 
-def clean_dataframe(df):
+def trim_dataframe(df):
     for field in df.schema.fields:
         if isinstance(field.dataType, StringType):
             df = df.withColumn(field.name, trim(col(field.name)))
@@ -54,15 +54,15 @@ def replace_nulls(df):
 json_files = list_s3_files(RAW_JSON_PATH)
 csv_files = list_s3_files(RAW_CSV_PATH)
 
-movies_details_df = read_and_union_files(json_files, 'json')
+movies_json_df = read_and_union_files(json_files, 'json')
 movies_csv_df = read_and_union_files(csv_files, 'csv')
 
-movies_details_df = clean_dataframe(movies_details_df)
-movies_csv_df = clean_dataframe(movies_csv_df)
+movies_json_df = trim_dataframe(movies_json_df)
+movies_csv_df = trim_dataframe(movies_csv_df)
 
 movies_csv_df = movies_csv_df.withColumnRenamed("id", "imdb_id")
 
-result_df = movies_details_df.join(movies_csv_df, on='imdb_id', how='left')
+result_df = movies_json_df.join(movies_csv_df, on='imdb_id', how='left')
 
 result_df = result_df.select(
     col('anoFalecimento').cast('int').alias('artist_death_year'),
