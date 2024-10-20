@@ -159,35 +159,19 @@ A **Camada Refined** de um Data Lake é a camada onde os dados estão preparados
   ![image](https://github.com/user-attachments/assets/0a9ed8f8-7a89-4acd-b271-8f7213aed6a5) <br>
   ![image](https://github.com/user-attachments/assets/44a4e8f9-bf93-4801-bd58-4dfbeaad7eb2) <br>
   ![image](https://github.com/user-attachments/assets/2fd3547c-0106-4a90-986a-9bceaced3ea3) <br> 
-  ![image](https://github.com/user-attachments/assets/98c73ed2-ecee-400f-92c3-00a55dbfa312) <br> 
-
-
-  
-
-
-    
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    
-
+  ![image](https://github.com/user-attachments/assets/98c73ed2-ecee-400f-92c3-00a55dbfa312) <br>
+  - Realize a seguinte consulta, alterando o nome da tabela, para visualizar os dados da tabela. <br>
+  ```sql
+  SELECT * FROM "datalake_pb_lucas"."nome_da_tabela" limit 10;
+  ```
+  - **dim_artist** <br>
+  <img width="952" src="https://github.com/user-attachments/assets/38bf2d21-e896-448f-93ea-a086165d7495"> <br>
+  - **dim_calendar** <br>
+  <img width="814" src="https://github.com/user-attachments/assets/69e36cb3-22dc-42ec-af11-3b64bc25b4c4"> <br>
+  - **dim_character** <br>
+  <img width="640" src="https://github.com/user-attachments/assets/4543d317-6fff-4002-942f-d70ed94c5754"> <br>
+  - **dim_movie** <br>
+  <img width="899" src="https://github.com/user-attachments/assets/d6815e03-8660-4a34-9594-b074fe0fb54b"> <br>
+  - **fact_movies** <br>
+  <img width="950" src="https://github.com/user-attachments/assets/b328b96a-a764-4a91-ab66-43ca5728463d"> <br>
 
