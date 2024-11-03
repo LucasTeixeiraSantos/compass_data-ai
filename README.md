@@ -25,4 +25,4 @@
 7. [Sprint 7](Sprint%207)
 8. [Sprint 8](Sprint%208)
 9. [Sprint 9](Sprint%209)
-10. [Sprint 10](Sprint%210)
+10. [Sprint 10](Sprint%2010)
