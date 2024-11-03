@@ -2,10 +2,11 @@ import json
 import aiohttp
 import asyncio
 import boto3
+import os
 from botocore.exceptions import ClientError
 from datetime import datetime, timezone
 
-TMDB_API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NzI2YWIwNmM5MDBiMTMyMjU2ODE4YTIzZTU5YTBlYSIsIm5iZiI6MTcyNTAzODA5OC42MTMwODQsInN1YiI6IjY2ZDFmNmU5NmU5Nzk1M2IwNTk0M2EwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TL6x5qI7oM3-LGsx_ih83FYerpKiFcki-iWglTxwnOs"  # Insira sua chave da API do TMDB
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 S3_BUCKET = "data-lake-lucas-ts"
 
 BASE_URL_DISCOVER = "https://api.themoviedb.org/3/discover/movie"
