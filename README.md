@@ -1,28 +1,76 @@
-## Informações
+# Projeto de Estágio em Dados - Compass Data & AI
 
-<img src="https://github.com/LucasTeixeiraSantos/compass_data-ai/assets/134326998/fe9e7b6b-bfa9-48bd-ab7d-9613ae430fa6" alt="Lucas Teixeira Santos" width="190" align="left" style="margin-right: 15px;" />
+## **Visão Geral**  
+Repositório contendo o projeto desenvolvido durante o programa de Estágio em Dados da Compass Data & AI. O objetivo principal é construir um pipeline completo de dados na AWS para análise de filmes e séries, abrangendo desde ingestão e processamento até visualização de dados.
 
-**Nome:** &nbsp;&nbsp;Lucas Teixeira Santos  
+---
+## **Dashboard Final**
+ 
+ ![Análise Geral](Sprint%2010/evidencias/41-quicksight-analysis-sheet-analysis.png)
+ ![Detalhes do Filme](Sprint%2010/evidencias/42-quicksight-analysis-sheet-movie-details.png)
 
-**Instituição:** &nbsp;&nbsp;IFRS – Campus Rio Grande  
+---
 
-**Curso:** &nbsp;&nbsp;Análise e Desenvolvimento de Sistemas (3º Semestre)
+## Estrutura do Projeto (10 Sprints)
 
-**Experiências:** &nbsp;&nbsp; Programa DevOps (Desenvolve - Grupo Boticário), &nbsp; Programa BackEnd Java (ADA - Santander)  
+### Sprint 1: Linux & Git
+- Fundamentos de linha de comando e controle de versão
 
-**Hobbies:** &nbsp;&nbsp;Jogos, culinária, motos...  
+### Sprint 2: SQL 
+- Manipulação de dados com consultas SQL
 
-<br clear="left"/>
+### Sprint 3: Python
+- Automação e análise de dados
 
-## Sprints 
+### Sprint 4: Docker
+- Containerização de aplicações
 
-1. [Sprint 1](Sprint%201)
-2. [Sprint 2](Sprint%202)
-3. [Sprint 3](Sprint%203)
-4. [Sprint 4](Sprint%204)
-5. [Sprint 5](Sprint%205)
-6. [Sprint 6](Sprint%206)
-7. [Sprint 7](Sprint%207)
-8. [Sprint 8](Sprint%208)
-9. [Sprint 9](Sprint%209)
-10. [Sprint 10](Sprint%2010)
+### Sprint 5: AWS Essentials
+- Configuração S3 e integração com boto3
+
+### Sprint 6: Upload Inicial
+- Carregamento de dados brutos no S3
+
+### Sprint 7: Ingestão via API
+- Coleta de dados do TMDB e armazenamento
+
+### Sprint 8: Processamento (Trusted)
+- Transformação de dados com AWS Glue/PySpark
+- Conversão para formato Parquet
+
+### Sprint 9: Modelagem (Refined)
+- Implementação de Star Schema
+- Otimização para consultas analíticas
+
+### Sprint 10: Visualização
+- Criação de dashboards interativos no QuickSight
+- Geração de insights estratégicos
+---
+
+## Tecnologias & Ferramentas
+
+### Fundamentos
+- **Linux**: Manipulação de arquivos e diretórios
+- **Git & GitHub**: Versionamento e colaboração
+- **SQL**: Consultas e manipulação de dados
+- **Python**: Automação e processamento de dados
+- **Docker**: Containerização de aplicações
+
+### ☁️ AWS Stack
+| Serviço           | Função                                                                |
+|-------------------|-----------------------------------------------------------------------|
+| **S3**                | Armazenamento de dados (raw/trusted/refined)                          |
+| **Lambda**            | Ingestão de dados via API (serverless)                                |
+| **Glue**              | Processamento ETL com PySpark                                         |
+| **Athena**            | Consulta direta de dados no S3 via SQL                                |
+| **QuickSight**        | Visualização de dados e dashboards                                    |
+| **Boto3**             | Integração Python com serviços AWS                                    |
+
+
+### Outras Ferramentas
+- **PySpark**: Processamento em larga escala
+- **Parquet**: Formato otimizado para Big Data
+- **API TMDB**: Coleta de dados de filmes/séries
+- **Star Schema**: Modelagem dimensional para análise
+
+
